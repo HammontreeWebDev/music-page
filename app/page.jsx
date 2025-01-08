@@ -86,7 +86,7 @@ export default function Example() {
               viewBox="0 0 100 100"
               preserveAspectRatio="none"
               aria-hidden="true"
-              className="absolute inset-y-0 right-8 hidden h-full w-80 translate-x-1/2 transform fill-[var(--alt2)] lg:block"
+              className="absolute inset-y-0 right-8 hidden h-full w-80 translate-x-1/2 transform fill-black lg:block"
             >
               <polygon points="0,0 90,0 50,100 0,100" />
             </svg>
@@ -94,9 +94,9 @@ export default function Example() {
             <div className="relative px-6 py-32 sm:py-40 lg:px-8 lg:py-56 lg:pr-0">
               <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
                 <div className="hidden sm:mb-10 sm:flex">
-                  <div className="relative rounded-full px-3 py-1 text-sm/6 text-[var(--primary5)] ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-                    Check out Kaileb&nbsp; {' '}
-                    <a href="https://open.spotify.com/artist/3L3Cxw0CBvdawpRzXlN0bc" className="whitespace-nowrap font-semibold text-[var(--primary3)]">
+                  <div className="relative rounded-full px-3 py-1 text-sm/6 text-[var(--primary3)] ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                    Now Streaming&nbsp; {' '}
+                    <a href="https://open.spotify.com/artist/3L3Cxw0CBvdawpRzXlN0bc" className="whitespace-nowrap font-semibold text-[#39d760]">
                       <span aria-hidden="true" className="absolute inset-0" />
                       on Spotify <span aria-hidden="true">&rarr;</span>
                     </a>
