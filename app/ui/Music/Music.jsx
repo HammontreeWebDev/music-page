@@ -1,6 +1,6 @@
 export default function Music() {
     return (
-        <div className="bg-[var(--primary4)] py-24 sm:py-32">
+        <div className="bg-black py-24 sm:py-32">
             <div className="mx-auto max-w-2xl px-6 lg:px-8">
                 <h2 id="music" className="text-center text-lg/8 font-semibold text-white">Now Streaming On All Platforms!</h2>
                 <div className="mx-auto mt-10 flex max-w-lg flex-wrap items-center justify-center gap-x-8 gap-y-10 sm:max-w-xl lg:mx-0 lg:max-w-none">

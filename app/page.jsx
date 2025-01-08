@@ -4,12 +4,13 @@ import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Music from './ui/Music/Music';
+import Contact from './ui/Contact/Contact';
 
 const navigation = [
   { name: 'Home', href: 'https://www.kailebhammontree.com/' },
   { name: 'Music', href: '#music' },
-  { name: 'Socials', href: '#' },
-  { name: 'Contact', href: '#' },
+  { name: 'Socials', href: '#socials' },
+  { name: 'Contact', href: '#contact' },
 ]
 
 export default function Example() {
@@ -121,9 +122,8 @@ export default function Example() {
 
     {/* Music Section */}
     <Music />
-    {/* Socials Section */}
-    {/* Contact Section */}
-
+    {/* Socials / Contact Section */}
+    <Contact />
     </>
   )
 }
