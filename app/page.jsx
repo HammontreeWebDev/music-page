@@ -5,12 +5,13 @@ import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Music from './ui/Music/Music';
 import Contact from './ui/Contact/Contact';
+import Upcoming from './ui/Upcoming/Upcoming';
 
 const navigation = [
   { name: 'Home', href: 'https://www.kailebhammontree.com/' },
-  { name: 'Music', href: '#music' },
-  { name: 'Socials', href: '#socials' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Streaming Platforms', href: '#music' },
+  { name: 'Upcoming Music', href: '#upcoming' },
+  { name: 'Contact / Socials', href: '#socials' },
 ]
 
 export default function Example() {
@@ -120,8 +121,17 @@ export default function Example() {
       </div>
     </div>
 
-    {/* Music Section */}
+    {/* Streaming Platforms Section */}
     <Music />
+    {/* Upcoming Music Section */}
+    <Upcoming 
+    songName={`For You`}
+    artist={`Kaileb Hammontree`}
+    presave={`https://distrokid.com/hyperfollow/kailebhammontree/for-you`}
+    date={`02/07/2025`}
+    time={`12:00 AM`}
+    img={`/img/forYou.jpg`}
+    />
     {/* Socials / Contact Section */}
     <Contact />
     </>
