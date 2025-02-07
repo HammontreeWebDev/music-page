@@ -6,23 +6,34 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Music from './ui/Music/Music';
 import Contact from './ui/Contact/Contact';
 import Upcoming from './ui/Upcoming/Upcoming';
+import Released from './ui/Released/Released';
 
 const navigation = [
   { name: 'Home', href: 'https://www.kailebhammontree.com/' },
   { name: 'Streaming Platforms', href: '#music' },
+  { name: 'Latest Releases', href: '#latest' },
   { name: 'Upcoming Music', href: '#upcoming' },
   { name: 'Contact / Socials', href: '#socials' },
 ]
 
-const songArray = [
+const releasedSongs = [
   {
     songName: `For You`,
     artist: `Kaileb Hammontree`,
-    presave: `https://distrokid.com/hyperfollow/kailebhammontree/for-you`,
+    songLink: `https://open.spotify.com/track/1t5nEpVOvIhzzuxlSHwxAK`,
     date: `02/07/2025`,
-    time: `12:00 AM`,
     img: `/img/forYou.jpg`,
   },
+  {
+    songName: `Hey You`,
+    artist: `Kaileb Hammontree`,
+    songLink: `https://open.spotify.com/track/68nNyTkpYJQw9AxLVm2URR`,
+    date: `01/03/2025`,
+    img: `/img/HeyYou.jpg`,
+  },
+]
+
+const songArray = [
   {
     songName: `Over You`,
     artist: `Kaileb Hammontree`,
@@ -142,6 +153,12 @@ export default function Example() {
 
       {/* Streaming Platforms Section */}
       <Music />
+
+      {/* Now Released */}
+      <Released
+        songs={releasedSongs}
+      />
+
       {/* Upcoming Music Section */}
       <Upcoming
         songs={songArray}
