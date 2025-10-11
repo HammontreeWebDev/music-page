@@ -18,11 +18,20 @@ const navigation = [
 
 const releasedSongs = [
   {
+    songName: `Over You`,
+    artist: `Kaileb Hammontree`,
+    songLink: `https://open.spotify.com/track/3BoE1ppxt5gAh3wF9fiLCE`,
+    date: `02/21/2025`,
+    img: `/img/OverYou.jpg`,
+    type: 'Single'
+  },
+  {
     songName: `For You`,
     artist: `Kaileb Hammontree`,
     songLink: `https://open.spotify.com/track/1t5nEpVOvIhzzuxlSHwxAK`,
     date: `02/07/2025`,
     img: `/img/forYou.jpg`,
+    type: 'Single'
   },
   {
     songName: `Hey You`,
@@ -30,19 +39,21 @@ const releasedSongs = [
     songLink: `https://open.spotify.com/track/68nNyTkpYJQw9AxLVm2URR`,
     date: `01/03/2025`,
     img: `/img/HeyYou.jpg`,
+    type: 'Single'
   },
 ]
 
-const songArray = [
-  {
-    songName: `Over You`,
-    artist: `Kaileb Hammontree`,
-    presave: `https://distrokid.com/hyperfollow/kailebhammontree/over-you-3`,
-    date: `02/21/2025`,
-    time: `12:00 AM`,
-    img: `/img/OverYou.jpg`,
-  },
-]
+// const songArray = [
+//   {
+//     songName: `Over You`,
+//     artist: `Kaileb Hammontree`,
+//     presave: `https://distrokid.com/hyperfollow/kailebhammontree/over-you-3`,
+//     date: `02/21/2025`,
+//     time: `12:00 AM`,
+//     img: `/img/OverYou.jpg`,
+//     type: 'Single'
+//   },
+// ]
 
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -160,9 +171,9 @@ export default function Example() {
       />
 
       {/* Upcoming Music Section */}
-      <Upcoming
+      {/* <Upcoming
         songs={songArray}
-      />
+      /> */}
       {/* Socials / Contact Section */}
       <Contact />
     </>

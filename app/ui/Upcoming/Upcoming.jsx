@@ -42,6 +42,7 @@ export default function Upcoming({ songs }) {
                 <div className="mt-1 text-[var(--alt2)]">
                     <p>Release Date: {song.date}</p>
                     <p>Release Time: {song.time}</p>
+                    <p>Type: {song.type}</p>
                 </div>
                 <div className="mt-1 flex justify-center lg:justify-start">
                     <CountdownTimer targetDate={song.date} />
