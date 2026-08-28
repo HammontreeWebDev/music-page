@@ -6,8 +6,11 @@ export default function About() {
       <AmbientBackground />
 
       <div className="relative z-10 mx-auto max-w-6xl">
-        <h2 className="animate-fade-up stagger-2 font-music-display text-4xl leading-none tracking-wide text-[var(--music-cream)] sm:text-5xl lg:text-6xl">
-          The <span className="music-gradient-text">Artist</span>
+        <h2 className="animate-fade-up stagger-2 font-music-display text-3xl leading-[1.1] tracking-wide text-[var(--music-cream)] sm:text-4xl lg:text-5xl">
+          Where <span className="music-gradient-text">Words</span> Meet{" "}
+          <span className="music-gradient-text music-shimmer">Music</span>,
+          <br />
+          Stories Find Their <span className="text-[var(--music-golden)]">Rhythm</span>
         </h2>
 
         <div className="mt-8 max-w-xl">

@@ -32,7 +32,7 @@ export default function Navigation() {
         aria-label="Main navigation"
         className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 sm:px-10 lg:px-12"
       >
-        <a href="#" className="font-music-display text-lg tracking-wide sm:text-xl">
+        <a href="https://www.kailebhammontree.com/" className="font-music-display text-lg tracking-wide sm:text-xl">
           <span className="music-gradient-text music-shimmer">Kaileb</span>{" "}
           <span className="text-[var(--music-cream)]">Hammontree</span>
         </a>
