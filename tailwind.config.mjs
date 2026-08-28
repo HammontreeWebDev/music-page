@@ -10,9 +10,21 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+
+        "music-canvas": "#140818",
+        "music-wine": "#1A0A1E",
+        amethyst: "#9B5DE5",
+        bubblegum: "#F15BB5",
+        "golden-hour": "#FFB347",
+        "lemon-zest": "#FEE440",
+        "cream-spot": "#FFF5E6",
       },
-      screens : {
-        'xs': '418px',
+      fontFamily: {
+        "music-display": ["var(--font-music-display)"],
+        "music-body": ["var(--font-music-body)"],
+      },
+      screens: {
+        xs: "418px",
       },
     },
   },

@@ -1,83 +1,68 @@
 "use client";
 
 import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from 'embla-carousel-autoplay'
+import Autoplay from "embla-carousel-autoplay";
+import AmbientBackground from "../../components/AmbientBackground";
+import PanelCard from "../../components/PanelCard";
+import MusicCTA from "../../components/MusicCTA";
 
 export default function Released({ songs }) {
-    const [emblaRef] = useEmblaCarousel({ loop: true}, [Autoplay()]);
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()]);
 
-    return (
-        <section id="latest" className="isolate overflow-hidden mb-12 bg-black px-6 lg:px-8">
-            <div className="relative mx-auto max-w-2xl py-24 sm:py-32 lg:max-w-4xl">
-                <div className="absolute left-1/2 top-0 -z-10 h-[50rem] w-[90rem] -translate-x-1/2 bg-[radial-gradient(50%_100%_at_top,var(--primary3),var(--alt3))] opacity-20 lg:left-36" />
-                <div className="absolute inset-y-0 right-1/2 -z-10 mr-12 w-[150vw] origin-bottom-left skew-x-[-30deg] bg-black shadow-xl shadow-[var(--p4-25)] ring-1 ring-[var(--primary2)] sm:mr-20 md:mr-0 lg:right-full lg:-mr-36 lg:origin-center" />
+  return (
+    <section id="latest" className="relative overflow-hidden px-6 py-16 sm:px-10 sm:py-24 lg:px-12">
+      <AmbientBackground />
 
-                <figure className="grid grid-cols-1 gap-y-8 lg:gap-y-10 justify-items-center">
-                    {/* Blockquote Title + SVG */}
-                    <div className="relative col-span-1 text-center">
-                        <svg
-                            aria-hidden="true"
-                            className="absolute -top-12 left-1/2 -translate-x-1/2 -z-10 h-32 stroke-[var(--p4-25)]"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="256"
-                            height="256"
-                            viewBox="0 0 256 256"
-                        >
-                            <path
-                                fill="var(--primary2)"
-                                d="M228 48a4 4 0 0 1-4 4h-20v20a4 4 0 0 1-8 0V52h-20a4 4 0 0 1 0-8h20V24a4 4 0 0 1 8 0v20h20a4 4 0 0 1 4 4m-16 64v52a32.06 32.06 0 1 1-8-21.13V112a4 4 0 0 1 8 0m-8 52a24 24 0 1 0-24 24a24 24 0 0 0 24-24M84 107.12V196a32.06 32.06 0 1 1-8-21.13V56a4 4 0 0 1 3-3.88l56-14a4 4 0 0 1 2 7.76L84 59.12v39.76l75-18.76a4 4 0 0 1 2 7.76ZM76 196a24 24 0 1 0-24 24a24 24 0 0 0 24-24"
-                            />
-                        </svg>
-                        <blockquote className="text-xl/8 font-semibold text-[var(--foreground)] sm:text-2xl/9">
-                            <p>Latest Releases</p>
-                        </blockquote>
+      <div className="relative z-10 mx-auto max-w-6xl">
+        <p className="font-music-body text-xs font-semibold uppercase tracking-[0.28em] text-[var(--music-bubblegum)]">
+          Fresh drops
+        </p>
+        <h2 className="mt-3 font-music-display text-4xl leading-none tracking-wide text-[var(--music-cream)] sm:text-5xl">
+          Latest <span className="music-gradient-text">Releases</span>
+        </h2>
+
+        <div className="mt-10 overflow-hidden" ref={emblaRef}>
+          <div className="flex gap-6">
+            {songs.map((song, index) => (
+              <div key={index} className="min-w-full flex-shrink-0 sm:min-w-[calc(100%-2rem)]">
+                <PanelCard className="grid grid-cols-1 items-center gap-8 p-6 sm:grid-cols-[auto_1fr] sm:p-8">
+                  <div className="relative mx-auto sm:mx-0">
+                    <div
+                      className="absolute -inset-4 rounded-3xl blur-2xl"
+                      style={{ background: "var(--music-amethyst)", opacity: 0.25 }}
+                      aria-hidden="true"
+                    />
+                    <img
+                      alt={`${song.songName} album art`}
+                      src={song.img}
+                      className="relative w-56 rounded-2xl sm:w-64"
+                    />
+                  </div>
+
+                  <div className="text-center sm:text-left">
+                    <p className="font-music-body text-xs font-semibold uppercase tracking-[0.2em] text-[var(--music-golden)]">
+                      {song.type}
+                    </p>
+                    <h3 className="mt-2 font-music-display text-2xl text-[var(--music-cream)] sm:text-3xl">
+                      {song.songName}
+                    </h3>
+                    <p className="mt-1 font-music-body text-sm text-[var(--music-cream)]/50">
+                      {song.artist}
+                    </p>
+                    <p className="mt-2 font-music-body text-sm text-[var(--music-cream)]/50">
+                      Released {song.date}
+                    </p>
+
+                    <div className="mt-6 flex justify-center sm:justify-start">
+                      <MusicCTA href={song.songLink}>Stream Latest</MusicCTA>
                     </div>
-
-                    {/* Carousel Wrapper */}
-                    <div className="overflow-hidden w-full mt-3" ref={emblaRef}>
-                        <div className="embla__container flex gap-8">
-                            {songs.map((song, index) => (
-                                <div
-                                    key={index}
-                                    className="embla__slide min-w-full flex-shrink-0 grid grid-cols-1 lg:grid-cols-[auto_1fr] items-center gap-6 w-full justify-items-center"
-                                >
-                                    {/* Image */}
-                                    <div className="w-full flex justify-center lg:justify-start">
-                                        <img
-                                            alt=""
-                                            src={song.img}
-                                            className="w-72 rounded-xl bg-[var(--primary1)] lg:rounded-3xl"
-                                        />
-                                    </div>
-
-                                    {/* Text */}
-                                    <figcaption className="text-base text-center lg:text-left w-full">
-                                        <div className="font-semibold text-[var(--foreground)]">
-                                            "{song.songName}" by {song.artist}
-                                        </div>
-                                        <div className="mt-1 text-[var(--alt2)]">
-                                            <a href={song.songLink} className="text-[var(--primary1)]">
-                                                Listen to{" "}
-                                                <span className="font-bold text-[var(--primary2)]">{song.songName}</span>{" "}
-                                                NOW on <span className="text-[var(--primary2)]">Spotify</span>{" "}
-                                                <span className="text-[var(--primary2)]" aria-hidden="true">
-                                                    &rarr;
-                                                </span>
-                                            </a>
-                                        </div>
-                                        <div className="mt-1 text-[var(--alt2)]">
-                                            <p>Released On: {song.date}</p>
-                                        </div>
-                                        <div className="mt-1 text-[var(--alt2)]">
-                                            <p>Type: {song.type}</p>
-                                        </div>
-                                    </figcaption>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </figure>
-            </div>
-        </section>
-    );
+                  </div>
+                </PanelCard>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
